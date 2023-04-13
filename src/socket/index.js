@@ -5,7 +5,8 @@ export const newSocketConnection = (socket) => {
   socket.emit("welcome", { message: `Welcome ${socket.id}` });
 
   // 2. Deal with the new arrival
-  socket.emit("setUsername", (payload) => {
+  socket.on("setUsername", (payload) => {
+    console.log(payload);
     // 2.1 Add the user in to Online Users array
     onlineUsers.push({ username: payload.username, socketID: socket.id });
     // 2.2 Send the online users list to the user
