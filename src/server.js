@@ -15,7 +15,5 @@ socketioServer.on("connection", newSocketConnection);
 
 mongoose.connect(process.env.MONGO_URL);
 mongoose.connection.on("connected", () => {
-  httpServer.listen(port, () => {
-    console.table(listEndpoints(expressServer));
-  });
+  httpServer.listen(port);
 });
