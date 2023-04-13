@@ -1,4 +1,4 @@
-const onlineUsers = [];
+let onlineUsers = [];
 
 export const newSocketConnection = (socket) => {
   // 1. Send a message to a user that just logged in
